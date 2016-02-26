@@ -15,6 +15,6 @@
 
 |1                                  |2                                           |3                                           |
 |-----------------------------------|--------------------------------------------|--------------------------------------------|
-|[index.html](index.html)           |[mysql.inc.html](conn/mysql.inc.html)       |                                            |
+|[index.html](index.html)           |[mysql.inc.html](conn/mysql.inc.php)       |                                            |
 |                                   |[login.php](function/login.php)             |[logindec.php](function/logindec.php)       |
 
