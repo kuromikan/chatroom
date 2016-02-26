@@ -19,12 +19,12 @@ if($_SESSION['admin'] == "")
 			$sql_password=$row[1];
 		}
 	if($sql_username==$sql_username && $post_password==$sql_password && $post_username!="" && $post_password!="")
-	{echo "1";
+	{
 		$_SESSION['admin'] = "$sql_username";
-		//header("Location: main.html");
+		header("Location: main.html");
 	}else
-	{echo "2";
-		//header("Location: index.html");
+	{
+		header("Location: index.html");
 	}
 	ob_end_flush();
 	
