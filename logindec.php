@@ -1,19 +1,39 @@
 <?php
 header("Content-Type:text/html; charset=utf-8");
 ob_start();
-if (!isset($_SESSION)) {
-  session_start();
-}
+session_start();
 
-$_SESSION['admin'] = NULL;
-
-if($_POST['passwd'] == "root" && $_POST['username']== "root"){
-	 $_SESSION['admin'] = "root";
-	header("Location: main.html");
-}else{
-	header("Location: index.html");
+if($_SESSION['admin'] == "")
+{
+	include("conn/mysql.inc.php");
+	$post_username=$_POST["username"];
+	$post_password=$_POST["passwd"];
+	$sql_username="";
+	$sql_password="";
+	$sql = "select `username`,`password` from `user` where `username`='$post_username'";
+	echo $sql;
+    $result = mysql_query($sql) ;
+		while($row = mysql_fetch_row($result))
+		{
+			$sql_username=$row[0];
+			$sql_password=$row[1];
+		}
+	if($sql_username==$sql_username && $post_password==$sql_password && $post_username!="" && $post_password!="")
+	{echo "1";
+		$_SESSION['admin'] = "$sql_username";
+		//header("Location: main.html");
+	}else
+	{echo "2";
+		//header("Location: index.html");
+	}
+	ob_end_flush();
+	
 }
-ob_end_flush();
+else
+{
+
+}
+echo $_SESSION['admin'];
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
