@@ -23,4 +23,4 @@
 |                                   |                                            |                                            |                                            |                                            |[logout.php](function/logout.php)           |
 
 
-[structure](structure.png)
+![structure](structure.png)
