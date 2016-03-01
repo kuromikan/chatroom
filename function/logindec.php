@@ -5,7 +5,7 @@ session_start();
 
 if($_SESSION['admin'] == "")
 {
-	include("conn/mysql.inc.php");
+	include("../conn/mysql.inc.php");
 	$post_username=$_POST["username"];
 	$post_password=$_POST["passwd"];
 	$sql_username="";
