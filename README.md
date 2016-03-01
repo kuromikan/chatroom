@@ -16,8 +16,11 @@
 
 關聯
 
-|1                                  |2                                           |3                                           |4                                           |5                                           |
-|-----------------------------------|--------------------------------------------|--------------------------------------------|--------------------------------------------|--------------------------------------------|
-|[index.html](index.html)           |[mysql.inc.html](conn/mysql.inc.php)        |                                            |                                            |                                            |
-|                                   |[login.php](function/login.php)             |[logindec.php](function/logindec.php)       |[msg.php](function/msg.php)                 |[msginsert.php](function/msginsert.php)     |
-|                                   |                                            |                                            |                                            |[logout.php](function/logout.php)           |
+|1                                  |2                                           |3                                           |4                                           |5                                           |6                                           |
+|-----------------------------------|--------------------------------------------|--------------------------------------------|--------------------------------------------|--------------------------------------------|--------------------------------------------|
+|[index.html](index.html)           |[mysql.inc.html](conn/mysql.inc.php)        |                                            |                                            |                                            |                                            |
+|                                   |[login.php](function/login.php)             |[logindec.php](function/logindec.php)       |[main.html](main.html)                      |[msg.php](function/msg.php)                 |[msginsert.php](function/msginsert.php)     |
+|                                   |                                            |                                            |                                            |                                            |[logout.php](function/logout.php)           |
+
+
+[structure](structure.png)
