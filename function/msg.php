@@ -8,6 +8,28 @@ session_start();
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <script>
+function msginsert() {
+	var str=document.getElementById("msg").value;
+    if (str == "") {
+        
+        return;
+    } else { 
+        if (window.XMLHttpRequest) {
+            // code for IE7+, Firefox, Chrome, Opera, Safari
+            xmlhttp = new XMLHttpRequest();
+        } else {
+            // code for IE6, IE5
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange = function() {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                document.getElementById("msg").innerHTML = "";
+            }
+        };
+        xmlhttp.open("GET","msginsert.php?msg="+str,true);
+        xmlhttp.send();
+    }
+}
 function logout() {
 
         if (window.XMLHttpRequest) {
@@ -34,7 +56,7 @@ function logout() {
   <br>
   <table>
   <tr><td>msg <input type="text" id="msg" /></td>
-  <td><input type="button" id="submit" value="Submit" /></td></tr>
+  <td><input type="button" id="submit" value="Submit" onClick="msginsert();" /></td></tr>
   <tr><td></td><td><input type="button" id="logout_btn" value="logout" onClick="logout();" /></td></tr>
   </table>
 </body>
