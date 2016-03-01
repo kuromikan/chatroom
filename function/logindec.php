@@ -11,7 +11,7 @@ if($_SESSION['admin'] == "")
 	$sql_username="";
 	$sql_password="";
 	$sql = "select `username`,`password` from `user` where `username`='$post_username'";
-	echo $sql;
+	//echo $sql;
     $result = mysql_query($sql) ;
 		while($row = mysql_fetch_row($result))
 		{
@@ -31,7 +31,7 @@ if($_SESSION['admin'] == "")
 }
 else
 {
-
+	header("Location: ../main.html");
 }
 echo $_SESSION['admin'];
 ?>
